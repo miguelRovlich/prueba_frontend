@@ -9,21 +9,19 @@
 export default {
     data() {
         return {
-            // TODO: Mover a .env
-            url:"https://api.coincap.io/v2/assets/",
         }
-    },    
+    },
     methods: {
-        getCoins(){
+        getCoins() {
             api.get("/assets/").then(
                 function (response) {
-    // manejar respuesta exitosa
-    console.log(response.data);
-  }
+                    // manejar respuesta exitosa
+                    console.log(response.data);
+                }
             )
         }
     },
-    mounted(){
+    mounted() {
         this.getCoins()
     }
 }
