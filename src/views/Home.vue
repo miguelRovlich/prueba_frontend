@@ -6,9 +6,9 @@
           </article>
         </div>
         <div  >
-        <CoinsTable/>
-        
-      </div>
+          
+          <CoinsTable/>
+        </div>
     </div>
   </template>
   

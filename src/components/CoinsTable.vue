@@ -1,13 +1,13 @@
 <template lang="">
-    <div class="">
-        <table class="table is-striped is-hoverable is-fullwidth">
+    <div class="column is-8">
+        <table class="table is-striped is-hoverable ">
           <thead>
 
             <th> Name</th>
             <th> Rank</th>
             <th> Symbol</th>
-            <th>Supply</th>
-            <th>Max Supply</th>
+            <!-- <th>Supply</th>
+            <th>Max Supply</th> -->
             <th>Price </th>
         </thead>
           <tbody>
@@ -15,8 +15,8 @@
               <td>{{coin.id}}</td>
               <td>{{coin.rank}}</td>
               <td>{{coin.symbol}}</td>
-              <td>{{coin.supply}}</td>
-              <td>{{coin.maxSupply}}</td>
+              <!-- <td>{{coin.supply}}</td>
+              <td>{{coin.maxSupply}}</td> -->
               <td>{{ coin.priceUsd }}</td>
               <td><button class="button is-info">Ver Mas</button></td>
             </tr>
@@ -29,6 +29,7 @@ export default {
     data() {
         return {
           criptoCoins: [],
+        //   TODO :Manejar errores de llenado de la API
           errors:[]
         }
     },
@@ -39,8 +40,6 @@ export default {
         .then(
           response => {
             // manejar respuesta exitosa
-            console.log(response.data)
-
             this.criptoCoins = response.data.data
           }
         )
