@@ -1,15 +1,17 @@
 <template>
-    <div>
-      <div class="tile is-parent">
-          <article class="tile is-child notification is-primary">
-            <p class="title has-text-centered">Bitcoin</p>
-          </article>
-        </div>
-        <div  >
+
+<section class="hero is-link is-fullheight-with-navbar bg-image">
+  <div class="hero-body">
+    <p class="title">
+      Cripto market App
+    </p>
+  </div>
+</section>
+        <div class="is-flex is-justify-content-center">
           
           <CoinsTable/>
         </div>
-    </div>
+    
   </template>
   
 <script>
@@ -19,33 +21,6 @@ export default {
     components:{
       CoinsTable,
     },
-    data() {
-        return {
-          criptoCoins: [],
-          errors:[]
-        }
-    },
-  methods: {
-    async getCoins() {
-      await api
-        .get("/assets?limit=15&offset=14")
-        .then(
-          response => {
-            // manejar respuesta exitosa
-            console.log(response.data)
-
-            this.criptoCoins = response.data.data
-          }
-        )
-        .catch((e) => {
-          this.errors.push(e)
-        })
-      console.log(this.criptoCoins)
-    }
-  },
-    mounted() {  
-      this.getCoins()
-    }
 }
 </script>
 
@@ -67,5 +42,8 @@ export default {
     /* agregar margin top */
     margin-top: 0.5rem;
     margin-left: 0.5rem;
+} 
+.bg-image{
+  background-image: url("../assets/im-storie-guia-para-saber-que-son-las-criptomonedas-3.jpg");
 }
 </style>

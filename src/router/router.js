@@ -5,7 +5,9 @@ import CoinDetail from "../views/CoinDetail.vue"
 
 const routes = [
     { path: "/", component: Home },
-    { path: '/coins', component: CoinDetail },
+    { path: '/coins', component: CoinDetail, props: (route) =>{
+      const id = router.params.id  
+    } },
     // { path: '/coin', component: NotFound },
     // { path: '/error:code(.*)', component: NotFound },
     // { path: '/:pathMatch(.*)*', component: NotFound }
