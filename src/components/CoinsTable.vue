@@ -19,7 +19,8 @@
               <!-- <td>{{coin.supply}}</td>
               <td>{{coin.maxSupply}}</td> -->
               <td>{{ coin.priceUsd }}</td>
-              <td><router-link to="/coins" class="button is-link is-rounded">Ver Mas</router-link></td>
+              <!-- <button @click="$redirect('/coins')" class="button is-link is-rounded">Ver Mas</button> -->
+                <router-link class="button is-link is-rounded" :to="{ name: 'coin', params: { id: coin.id } }">ver mas</router-link>
             </tr>
           </tbody>
         </table>
@@ -57,15 +58,13 @@ export default {
       console.log(this.criptoCoins)
     },
     nextPage() {
-      this.limit+=15
       this.offset+=15
       this.getCoins()
     },
     previousPage(){
-      this.limit-=15
       this.offset-=15
       this.getCoins()
-    }
+    },
   },
     mounted() {  
       this.getCoins()

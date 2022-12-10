@@ -7,11 +7,12 @@
     </p>
   </div>
 </section>
+        <h1 class="is-flex is-justify-content-center">Coins table</h1>
         <div class="is-flex is-justify-content-center">
           
           <CoinsTable/>
         </div>
-    
+
   </template>
   
 <script>

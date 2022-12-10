@@ -8,7 +8,8 @@ import Home from './views/Home.vue'
 <template>
   
   <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-  <Home />
+  <router-view></router-view>
+
 </template>
 
 <style>

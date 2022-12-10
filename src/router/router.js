@@ -4,9 +4,9 @@ import Home from "../views/Home.vue"
 import CoinDetail from "../views/CoinDetail.vue"
 
 const routes = [
-    { path: "/", component: Home },
-    { path: '/coins', component: CoinDetail, props: (route) =>{
-      const id = router.params.id  
+    { path: '/', component: Home },
+    { path: '/coin/:id', name:"coin",component: CoinDetail,props:(route) =>{
+      const id = route.params.id
     } },
     // { path: '/coin', component: NotFound },
     // { path: '/error:code(.*)', component: NotFound },

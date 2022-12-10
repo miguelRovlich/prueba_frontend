@@ -10,6 +10,6 @@ var api = axios.create({
   });
 window.api = api
   
-createApp(App)
-    .use(router)
-    .mount('#app')
+const app = createApp(App)
+app.config.globalProperties.$redirect = (page) => {router.push(page)}
+app.use(router).mount('#app')
